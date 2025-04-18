@@ -39,7 +39,7 @@ function Hero() {
               Organized by Undergraduates of BSc. in Physics & Electronics degree program
             </span> <br></br>
             <span className='text-xs md:text-sm'>
-              collaborate with Electronics Students' Society
+              collaborate with Electronics Students Society
             </span>
             <div ref={buttonsRef} className='flex md:flex-row gap-5 mt-4'>
                 <button className='bg-[#031753] p-2 rounded-md text-white'>About Event</button>

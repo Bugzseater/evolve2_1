@@ -19,7 +19,7 @@ function Sponsers() {
         scrollTrigger: {
           trigger: '.sponsers-title',
           start: 'top 80%',
-          toggleActions: 'play none none reverse',
+          toggleActions: 'play reverse play reverse',
         },
       }
     )
@@ -37,7 +37,7 @@ function Sponsers() {
           scrollTrigger: {
             trigger: card as HTMLElement,
             start: 'top 90%',
-            toggleActions: 'play none none reverse',
+            toggleActions: 'play reverse play reverse',
           },
         }
       )
