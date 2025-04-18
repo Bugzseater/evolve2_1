@@ -11,9 +11,9 @@ function Sponsers() {
     // Scroll animation for the h1 element
     gsap.fromTo(
       '.sponsers-title',
-      { x: 400, opacity: 0 },
+      { y: 400, opacity: 0 },
       {
-        x: 0,
+        y: 0,
         opacity: 1,
         duration: 1,
         scrollTrigger: {
@@ -28,9 +28,9 @@ function Sponsers() {
     gsap.utils.toArray('.sponser-card').forEach((card, index) => {
       gsap.fromTo(
         card as HTMLElement,
-        { x: -200, opacity: 0 },
+        { y: -200, opacity: 0 },
         {
-          x: 0,
+          y: 0,
           opacity: 1,
           duration: 1,
           delay: index * 0.1,

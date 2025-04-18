@@ -13,8 +13,8 @@ function Hero() {
     const ctx = gsap.context(() => {
       gsap.fromTo(
         textRef.current,
-        { opacity: 0, x: -400 },
-        { opacity: 1, x: 0, duration: 1, ease: 'power3.out' }
+        { opacity: 0, y: -400 },
+        { opacity: 1, y: 0, duration: 1, ease: 'power3.out' }
       );
       gsap.fromTo(
         buttonsRef.current,

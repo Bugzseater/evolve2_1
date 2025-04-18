@@ -15,7 +15,7 @@ function About() {
   useEffect(() => {
     gsap.from(headingRef.current, {
       opacity: 0,
-      x: -400,
+      y: -400,
       duration: 1,
       scrollTrigger: {
         trigger: headingRef.current,
