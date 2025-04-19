@@ -15,7 +15,7 @@ function About() {
   useEffect(() => {
     gsap.from(headingRef.current, {
       opacity: 0,
-      y: -400,
+      y: 50,
       duration: 1,
       scrollTrigger: {
         trigger: headingRef.current,
@@ -37,7 +37,7 @@ function About() {
 
     gsap.from(contentRef.current, {
       opacity: 0,
-      y: 100,
+      y: 30,
       duration: 1,
       delay: 0.5,
       scrollTrigger: {
@@ -61,7 +61,7 @@ function About() {
   }, [])
 
   return (
-    <div className='p-4 flex flex-col'>
+    <div className='p-4 flex flex-col mt-5'>
       <h1
         ref={headingRef}
         className='text-[30px] md:text-[40px] ml-4 md:ml-10 text-center md:text-left'
