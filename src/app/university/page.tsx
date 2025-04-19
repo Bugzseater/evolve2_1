@@ -61,7 +61,7 @@ function Page() {
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <label className="block text-sm font-medium text-gray-300 mt-4 mb-2" htmlFor="leader_st_no">
-                Leader's Student No
+                Leaders Student No
               </label>
               <input
                 type="text"
