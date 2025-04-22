@@ -12,21 +12,21 @@ function Page() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center p-4">
+    <div className="w-full flex flex-col items-center bg-[#080111] min-h-screen">
       <Navbar />
-      <div className="flex flex-col items-center bg-[#080111] mt-8 p-4 text-center page-title">
+      <div className="flex flex-col items-center mt-8 p-4 text-center page-title">
         <h1 className="text-2xl md:text-4xl font-bold text-white">Welcome to the School Page</h1>
         <p className="mt-4 text-sm md:text-base text-gray-300">
           This is a placeholder for school-related content.
         </p>
       </div>
       <div className="w-full max-w-6xl mt-10 p-4 bg-white/5 rounded-lg shadow-md form-section">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">Registration</h1>
+        <h1 className="text-white/50 text-3xl md:text-4xl font-bold text-center mb-6">Registration</h1>
         <form name="School_Registration" className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {/* School Information */}
           <div className="content-section">
             <h2 className="text-xl font-semibold mb-4">School Information</h2>
-            <label htmlFor="schoolname" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="schoolname" className="block text-sm font-medium text-white/50">
               School Name
             </label>
             <input
@@ -35,10 +35,10 @@ function Page() {
               name="school_name"
               placeholder="School Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
             />
 
-            <label htmlFor="tutorname" className="block text-sm font-medium text-gray-700 mt-4">
+            <label htmlFor="tutorname" className="block text-sm font-medium text-white/50 mt-4">
               Tutor Name
             </label>
             <input
@@ -47,10 +47,10 @@ function Page() {
               name="tutor_name"
               placeholder="Tutor Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
             />
 
-            <label htmlFor="tcontact" className="block text-sm font-medium text-gray-700 mt-4">
+            <label htmlFor="tcontact" className="block text-sm font-medium text-white/50 mt-4">
               Tutor Contact Number
             </label>
             <input
@@ -59,14 +59,14 @@ function Page() {
               name="tutor_contact"
               placeholder="EX: 07xxxxxxxx"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
             />
           </div>
 
           {/* Leader Information */}
           <div className="content-section">
             <h2 className="text-xl font-semibold mb-4">Leader Information</h2>
-            <label htmlFor="teamname" className="block text-sm font-medium text-gray-700">
+            <label htmlFor="teamname" className="block text-sm font-medium text-white/50">
               Team Name
             </label>
             <input
@@ -75,10 +75,10 @@ function Page() {
               name="team_name"
               placeholder="Team Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
             />
 
-            <label htmlFor="leadername" className="block text-sm font-medium text-gray-700 mt-4">
+            <label htmlFor="leadername" className="block text-sm font-medium text-white/50 mt-4">
               Leader Name
             </label>
             <input
@@ -87,10 +87,10 @@ function Page() {
               name="leader_name"
               placeholder="Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
             />
 
-            <label htmlFor="lcontact" className="block text-sm font-medium text-gray-700 mt-4">
+            <label htmlFor="lcontact" className="block text-sm font-medium text-white/50 mt-4">
               Leader Contact Number
             </label>
             <input
@@ -99,7 +99,7 @@ function Page() {
               name="leader_contact"
               placeholder="EX: 07xxxxxxxx"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
             />
           </div>
 
@@ -110,7 +110,7 @@ function Page() {
               <div key={i} className="mt-4">
                 <label
                   htmlFor={`member_${i + 2}_name`}
-                  className="block text-sm font-medium text-gray-700"
+                  className="block text-sm font-medium text-white/50"
                 >
                   Member {i + 2} Name
                 </label>
@@ -120,7 +120,7 @@ function Page() {
                   name={`member_${i + 2}_name`}
                   placeholder="Name"
                   required
-                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
                 />
               </div>
             ))}

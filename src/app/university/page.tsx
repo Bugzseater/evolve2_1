@@ -12,22 +12,22 @@ function Page() {
   }, []);
 
   return (
-    <div className="w-full flex flex-col items-center p-4">
+    <div className="w-full flex flex-col items-center bg-[#080111]">
       <Navbar />
-      <div className="flex flex-col items-center bg-[#080111] mt-8 p-4 text-center page-title">
-        <h1 className="text-2xl md:text-4xl font-bold text-white">Welcome to the University Page</h1>
-        <p className="mt-4 text-sm md:text-base text-gray-300">
+      <div className="flex flex-col items-center mt-8 p-4 text-center page-title">
+        <h1 className="text-2xl md:text-4xl font-bold text-white/50">Welcome to the University Page</h1>
+        <p className="mt-4 text-sm md:text-base text-white/50">
           This is a placeholder for university-related content.
         </p>
       </div>
       <div className="w-full max-w-6xl mt-10 p-6 bg-white/5 rounded-lg shadow-md form-section">
-        <h1 className="text-3xl md:text-4xl font-bold text-center mb-6">Registration</h1>
+        <h1 className="text-3xl md:text-4xl font-bold text-center mb-6 text-white/50">Registration</h1>
         <form name="University_Registration" method="POST" className="space-y-6">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* University and Leader Information */}
             <div className="col-span-1 md:col-span-2">
-              <h2 className="text-xl font-semibold mb-4">University and Leader Information</h2>
-              <label className="block text-sm font-medium text-gray-300 mb-2" htmlFor="university_name">
+              <h2 className="text-xl font-semibold mb-4 text-white/50">University and Leader Information</h2>
+              <label className="block text-sm font-medium text-white/50 mb-2" htmlFor="university_name">
                 University Name
               </label>
               <input
@@ -38,7 +38,7 @@ function Page() {
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <label className="block text-sm font-medium text-gray-300 mt-4 mb-2" htmlFor="team_name">
+              <label className="block text-sm font-medium text-white/50 mt-4 mb-2" htmlFor="team_name">
                 Team Name
               </label>
               <input
@@ -49,7 +49,7 @@ function Page() {
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <label className="block text-sm font-medium text-gray-300 mt-4 mb-2" htmlFor="leader_name">
+              <label className="block text-sm font-medium text-white/50 mt-4 mb-2" htmlFor="leader_name">
                 Leader Name
               </label>
               <input
@@ -60,7 +60,7 @@ function Page() {
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <label className="block text-sm font-medium text-gray-300 mt-4 mb-2" htmlFor="leader_st_no">
+              <label className="block text-sm font-medium text-white/50 mt-4 mb-2" htmlFor="leader_st_no">
                 Leaders Student No
               </label>
               <input
@@ -71,7 +71,7 @@ function Page() {
                 required
                 className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <label className="block text-sm font-medium text-gray-300 mt-4 mb-2" htmlFor="leader_contact">
+              <label className="block text-sm font-medium text-white/50 mt-4 mb-2" htmlFor="leader_contact">
                 Leader Contact Number
               </label>
               <input
@@ -86,11 +86,11 @@ function Page() {
 
             {/* Members Information */}
             <div className="col-span-1">
-              <h2 className="text-xl font-semibold mb-4">Members Information</h2>
+              <h2 className="text-xl font-semibold mb-4 text-white/50">Members Information</h2>
               {[2, 3, 4, 5].map((member) => (
                 <div key={member} className="mb-4">
                   <label
-                    className="block text-sm font-medium text-gray-300 mb-2"
+                    className="block text-sm font-medium text-white/50 mb-2"
                     htmlFor={`member_${member}_name`}
                   >
                     Member {member} Name
@@ -104,7 +104,7 @@ function Page() {
                     className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
                   />
                   <label
-                    className="block text-sm font-medium text-gray-300 mt-4 mb-2"
+                    className="block text-sm font-medium text-white/50 mt-4 mb-2"
                     htmlFor={`member_${member}_st_no`}
                   >
                     Member {member} Student No
