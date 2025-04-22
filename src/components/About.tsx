@@ -64,7 +64,7 @@ function About() {
     <div className='p-4 flex flex-col mt-5'>
       <h1
         ref={headingRef}
-        className='text-[30px] md:text-[40px] ml-4 md:ml-10 text-center md:text-left'
+        className=' text-white/80 text-[30px] md:text-[40px] ml-4 md:ml-10 text-center md:text-left'
       >
         ABOUT EVOLVE 24
       </h1>
@@ -85,7 +85,7 @@ function About() {
           ref={paragraphRef}
           className='w-full md:w-[60%] flex p-4 md:p-5 border ml-0 md:ml-10 text-sm md:text-base'
         >
-          <p className='text-justify'>
+          <p className='text-white/50 text-justify'>
             The undergraduates of the Bachelor of Science in Physics and
             Electronics degree program in collaboration with the Electronics
             Students Society, Faculty of Science of University of Kelaniya, is

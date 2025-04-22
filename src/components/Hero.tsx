@@ -38,7 +38,7 @@ function Hero() {
         <span className='font-bold text-white/50 text-sm md:text-base'>
           Organized by Undergraduates of BSc. in Physics &amp; Electronics degree program
         </span> <br />
-        <span className='text-xs md:text-sm'>
+        <span className=' text-white/50 text-xs md:text-sm'>
           in collaboration with Electronics Students Society
         </span>
         <div ref={buttonsRef} className='flex flex-col md:flex-row gap-5 mt-4'>

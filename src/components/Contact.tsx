@@ -55,22 +55,22 @@ function Contact() {
 
   return (
     <div className='p-4 flex flex-col mt-10'>
-      <h1 className='contact-title text-[30px] md:text-[60px] ml-4 md:ml-10 text-center md:text-left mb-8'>Contact Us</h1>
+      <h1 className='text-white/80 contact-title text-[30px] md:text-[60px] ml-4 md:ml-10 text-center md:text-left mb-8'>Contact Us</h1>
       <form 
         onSubmit={handleSubmit}
         className='flex flex-col gap-6 max-w-[600px] mx-auto bg-white/10 p-6 rounded-lg shadow-lg md:w-[80%]'>
         
-        <div className='flex flex-col'>
+        <div className='text-white/50 flex flex-col'>
           <label htmlFor="name" className='mb-2 text-lg font-semibold'>Name</label>
           <input type="text" id="name" name="name" required className='p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
         </div>
 
-        <div className='flex flex-col'>
+        <div className='text-white/50 flex flex-col'>
           <label htmlFor="email" className='mb-2 text-lg font-semibold'>Email</label>
           <input type="email" id="email" name="email" required className='p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500'/>
         </div>
 
-        <div className='flex flex-col'>
+        <div className='text-white/50 flex flex-col'>
           <label htmlFor="message" className='mb-2 text-lg font-semibold'>Message</label>
           <textarea id="message" name="message" required className='p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 resize-none h-[150px]'></textarea>
         </div>

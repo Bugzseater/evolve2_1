@@ -46,10 +46,10 @@ function Sponsers() {
 
   return (
     <div className='p-4 flex flex-col mt-10'>
-        <h1 className=' sponsers-title text-[30px] md:text-[60px] ml-4 md:ml-10 text-center md:text-left'>Sponsers</h1>
+        <h1 className=' text-white/80 sponsers-title text-[30px] md:text-[60px] ml-4 md:ml-10 text-center md:text-left'>Sponsers</h1>
         <div className='flex flex-wrap justify-center gap-4'>
             {/* Modernized card design */}
-            <div className='sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
+            <div className='text-white/50 sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
                 <Image src="/codegen.png" alt="CodeGen" width={100} height={100} className='rounded-full' />
                 <div className='flex flex-col justify-center items-start'>
                     <h3 className='text-lg font-semibold'>Golden Sponser</h3>
@@ -57,7 +57,7 @@ function Sponsers() {
                 </div>
             </div>
 
-            <div className='sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
+            <div className='text-white/50 sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
                 <div className=' flex flex-col justify-center items-start'>
                     <h3 className='text-lg font-semibold'>DIGITAL MEDIA</h3>
                     <h4 className='text-md text-gray-400'>HackSL</h4>
@@ -65,7 +65,7 @@ function Sponsers() {
                 <Image src="/hacksl.png" alt="CodeGen" width={100} height={100} className='rounded-full' />
             </div>
 
-            <div className='sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
+            <div className='text-white/50 sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
                 <Image src="/ceremoney.png" alt="CodeGen" width={100} height={100} className='rounded-full' />
                 <div className=' flex flex-col justify-center items-start'>
                     <h3 className='text-lg font-semibold'>PHOTOGRAPHY</h3>
@@ -73,7 +73,7 @@ function Sponsers() {
                 </div>
             </div>
 
-            <div className='sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
+            <div className='text-white/50 sponser-card flex gap-5 items-center justify-center sm:w-[22%] w-[100%] p-4 bg-white/10 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300'>
                 
                 <div className=' flex flex-col justify-center items-start'>
                     <h3 className='text-lg font-semibold'>DIGITAL MEDIA</h3>
