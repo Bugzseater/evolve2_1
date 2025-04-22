@@ -54,7 +54,7 @@ function Contact() {
   }
 
   return (
-    <div className='p-4 flex flex-col mt-10'>
+    <div className='p-1 flex flex-col mt-10'>
       <h1 className='text-white/80 contact-title text-[30px] md:text-[60px] ml-4 md:ml-10 text-center md:text-left mb-8'>Contact Us</h1>
       <form 
         onSubmit={handleSubmit}
