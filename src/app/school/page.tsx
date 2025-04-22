@@ -28,7 +28,7 @@ function Page() {
     gsap.from('.form-section', { opacity: 0, scale: 0.9, duration: 1, delay: 0.5 });
   }, []);
 
-  const handleChange = (e) => {
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
@@ -36,7 +36,7 @@ function Page() {
     }));
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
       await addDoc(collection(db, 'schools'), formData);
