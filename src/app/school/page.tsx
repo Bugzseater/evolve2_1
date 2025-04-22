@@ -1,15 +1,56 @@
 'use client';
-import Navbar from '@/components/Navbar';
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { gsap } from 'gsap';
+import Navbar from '@/components/Navbar';
+import { initializeApp } from 'firebase/app';
+import { getFirestore, collection, addDoc } from 'firebase/firestore';
+
+// Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyCyWNmtZE-qf2YFCE-WSrs5y4zm1SE_BTE",
+  authDomain: "registrations-7d122.firebaseapp.com",
+  projectId: "registrations-7d122",
+  storageBucket: "registrations-7d122.firebasestorage.app",
+  messagingSenderId: "330137906625",
+  appId: "1:330137906625:web:142aa4388df7e2c92a9340"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app);
 
 function Page() {
+  const [formData, setFormData] = useState({});
+
   useEffect(() => {
-    // GSAP Animations
     gsap.from('.page-title', { opacity: 0, y: -50, duration: 1 });
     gsap.from('.content-section', { opacity: 0, y: 50, duration: 1, stagger: 0.3 });
     gsap.from('.form-section', { opacity: 0, scale: 0.9, duration: 1, delay: 0.5 });
   }, []);
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    try {
+      await addDoc(collection(db, 'schools'), formData);
+      const msgElement = document.getElementById('msg');
+      if (msgElement) {
+        msgElement.innerText = 'Registration successful!';
+      }
+    } catch (error) {
+      const msgElement = document.getElementById('msg');
+      if (msgElement) {
+        msgElement.innerText = 'Error: ' + (error instanceof Error ? error.message : 'An unknown error occurred');
+      }
+    }
+  };
 
   return (
     <div className="w-full flex flex-col items-center bg-[#080111] min-h-screen">
@@ -22,117 +63,108 @@ function Page() {
       </div>
       <div className="w-full max-w-6xl mt-10 p-4 bg-white/5 rounded-lg shadow-md form-section">
         <h1 className="text-white/50 text-3xl md:text-4xl font-bold text-center mb-6">Registration</h1>
-        <form name="School_Registration" className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <form
+          name="School_Registration"
+          className="grid grid-cols-1 md:grid-cols-3 gap-6"
+          onSubmit={handleSubmit}
+        >
           {/* School Information */}
           <div className="content-section">
-            <h2 className="text-xl font-semibold mb-4">School Information</h2>
-            <label htmlFor="schoolname" className="block text-sm font-medium text-white/50">
-              School Name
-            </label>
+            <h2 className="text-xl font-semibold mb-4 text-white">School Information</h2>
+            <label className="block text-sm font-medium text-white/50">School Name</label>
             <input
               type="text"
-              id="schoolname"
               name="school_name"
               placeholder="School Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
             />
 
-            <label htmlFor="tutorname" className="block text-sm font-medium text-white/50 mt-4">
-              Tutor Name
-            </label>
+            <label className="block text-sm font-medium text-white/50 mt-4">Tutor Name</label>
             <input
               type="text"
-              id="tutorname"
               name="tutor_name"
               placeholder="Tutor Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
             />
 
-            <label htmlFor="tcontact" className="block text-sm font-medium text-white/50 mt-4">
-              Tutor Contact Number
-            </label>
+            <label className="block text-sm font-medium text-white/50 mt-4">Tutor Contact Number</label>
             <input
               type="text"
-              id="tcontact"
               name="tutor_contact"
               placeholder="EX: 07xxxxxxxx"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
             />
           </div>
 
           {/* Leader Information */}
           <div className="content-section">
-            <h2 className="text-xl font-semibold mb-4">Leader Information</h2>
-            <label htmlFor="teamname" className="block text-sm font-medium text-white/50">
-              Team Name
-            </label>
+            <h2 className="text-xl font-semibold mb-4 text-white">Leader Information</h2>
+            <label className="block text-sm font-medium text-white/50">Team Name</label>
             <input
               type="text"
-              id="teamname"
               name="team_name"
               placeholder="Team Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
             />
 
-            <label htmlFor="leadername" className="block text-sm font-medium text-white/50 mt-4">
-              Leader Name
-            </label>
+            <label className="block text-sm font-medium text-white/50 mt-4">Leader Name</label>
             <input
               type="text"
-              id="leadername"
               name="leader_name"
               placeholder="Name"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
             />
 
-            <label htmlFor="lcontact" className="block text-sm font-medium text-white/50 mt-4">
-              Leader Contact Number
-            </label>
+            <label className="block text-sm font-medium text-white/50 mt-4">Leader Contact Number</label>
             <input
               type="text"
-              id="lcontact"
               name="leader_contact"
               placeholder="EX: 07xxxxxxxx"
               required
-              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+              onChange={handleChange}
+              className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
             />
           </div>
 
           {/* Members Information */}
           <div className="content-section">
-            <h2 className="text-xl font-semibold mb-4">Members Information</h2>
+            <h2 className="text-xl font-semibold mb-4 text-white">Members Information</h2>
             {Array.from({ length: 4 }, (_, i) => (
               <div key={i} className="mt-4">
-                <label
-                  htmlFor={`member_${i + 2}_name`}
-                  className="block text-sm font-medium text-white/50"
-                >
+                <label className="block text-sm font-medium text-white/50">
                   Member {i + 2} Name
                 </label>
                 <input
                   type="text"
-                  id={`member_${i + 2}_name`}
                   name={`member_${i + 2}_name`}
                   placeholder="Name"
                   required
-                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50"
+                  onChange={handleChange}
+                  className="w-full p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 placeholder-white/50 text-white"
                 />
               </div>
             ))}
           </div>
+          <div className="md:col-span-3 mt-6">
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            >
+              Send
+            </button>
+          </div>
         </form>
         <div id="msg" className="text-center text-red-500 mt-6"></div>
-        <button
-          type="submit"
-          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 mt-6"
-        >
-          Send
-        </button>
       </div>
     </div>
   );
