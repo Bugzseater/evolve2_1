@@ -76,10 +76,10 @@ function Page() {
               {[2, 3, 4, 5].map((m) => (
                 <div key={m} className="mb-4">
                   <label className="block text-sm font-medium text-white/50 mb-2" htmlFor={`member_${m}_name`}>Member {m} Name</label>
-                  <input type="text" id={`member_${m}_name`} name={`member_${m}_name`} required className="w-full p-2 border border-gray-300 rounded-md text-white" />
+                  <input type="text" id={`member_${m}_name`} name={`member_${m}_name`}  className="w-full p-2 border border-gray-300 rounded-md text-white" />
                   
                   <label className="block text-sm font-medium text-white/50 mt-4 mb-2" htmlFor={`member_${m}_st_no`}>Member {m} Student No</label>
-                  <input type="text" id={`member_${m}_st_no`} name={`member_${m}_st_no`} required className="w-full p-2 border border-gray-300 rounded-md text-white" />
+                  <input type="text" id={`member_${m}_st_no`} name={`member_${m}_st_no`} className="w-full p-2 border border-gray-300 rounded-md text-white" />
                 </div>
               ))}
             </div>
