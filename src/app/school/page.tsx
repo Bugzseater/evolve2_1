@@ -1,12 +1,10 @@
 'use client';
 import React, { useEffect, useState } from 'react';
-import Image from 'next/image'
 import { gsap } from 'gsap';
 import Navbar from '@/components/Navbar';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
 import Price from '@/components/Price';
-import Footer from '@/components/Footer';
 import Minifooter from '@/components/Minifooter';
 
 // Firebase configuration

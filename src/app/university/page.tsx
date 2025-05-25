@@ -5,7 +5,6 @@ import { gsap } from 'gsap';
 import { db } from '@/firebase'; // Make sure firebase.js is configured properly
 import { collection, addDoc } from 'firebase/firestore';
 import PriceUC from '@/components/PriceUC';
-import Footer from '@/components/Footer';
 import Minifooter from '@/components/Minifooter';
 
 function Page() {
