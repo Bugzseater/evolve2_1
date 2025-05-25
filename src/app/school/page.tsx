@@ -1,9 +1,13 @@
 'use client';
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image'
 import { gsap } from 'gsap';
 import Navbar from '@/components/Navbar';
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc } from 'firebase/firestore';
+import Price from '@/components/Price';
+import Footer from '@/components/Footer';
+import Minifooter from '@/components/Minifooter';
 
 // Firebase configuration
 const firebaseConfig = {
@@ -20,7 +24,8 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 function Page() {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<{ [key: string]: string }>({});
+  const [msg, setMsg] = useState('');
 
   useEffect(() => {
     gsap.from('.page-title', { opacity: 0, y: -50, duration: 1 });
@@ -39,16 +44,33 @@ function Page() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     try {
-      await addDoc(collection(db, 'schools'), formData);
-      const msgElement = document.getElementById('msg');
-      if (msgElement) {
-        msgElement.innerText = 'Registration successful!';
-      }
+      // Prepare members array if needed
+      const members = Array.from({ length: 4 }, (_, i) => ({
+        name: formData[`member_${i + 2}_name`] || '',
+      }));
+      const data = {
+        school_name: formData.school_name || '',
+        tutor_name: formData.tutor_name || '',
+        tutor_contact: formData.tutor_contact || '',
+        team_name: formData.team_name || '',
+        leader_name: formData.leader_name || '',
+        leader_contact: formData.leader_contact || '',
+        members,
+      };
+      await addDoc(collection(db, 'schools'), data);
+      setMsg('Registration successful!');
+      (e.target as HTMLFormElement).reset();
+      setFormData({});
     } catch (error) {
-      const msgElement = document.getElementById('msg');
-      if (msgElement) {
-        msgElement.innerText = 'Error: ' + (error instanceof Error ? error.message : 'An unknown error occurred');
+      let errorMsg = error instanceof Error ? error.message : 'An unknown error occurred';
+      if (
+        errorMsg.includes('Missing or insufficient permissions') ||
+        errorMsg.includes('permission-denied')
+      ) {
+        errorMsg = 'You do not have permission to write to the database. Please contact the site administrator.';
       }
+      setMsg('Error: ' + errorMsg);
+      alert('Error: ' + errorMsg);
     }
   };
 
@@ -56,10 +78,19 @@ function Page() {
     <div className="w-full flex flex-col items-center bg-[#080111] min-h-screen">
       <Navbar />
       <div className="flex flex-col items-center mt-8 p-4 text-center page-title">
-        <h1 className="text-2xl md:text-4xl font-bold text-white">Welcome to the School Page</h1>
+        <h1 className="text-2xl md:text-4xl font-bold text-white">Welcome to School Registration</h1>
         <p className="mt-4 text-sm md:text-base text-gray-300">
-          This is a placeholder for school-related content.
+          <a
+            href="/Booklet_SC.pdf"
+            download
+            className="inline-block px-6 py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold shadow-lg hover:bg-white/20 transition-all duration-200 glassmorphism"
+          >
+            Download Proposal
+          </a>
         </p>
+      </div>
+      <div>
+        <Price/>
       </div>
       <div className="w-full max-w-6xl mt-10 p-4 bg-white/5 rounded-lg shadow-md form-section">
         <h1 className="text-white/50 text-3xl md:text-4xl font-bold text-center mb-6">Registration</h1>
@@ -163,8 +194,10 @@ function Page() {
             </button>
           </div>
         </form>
-        <div id="msg" className="text-center text-red-500 mt-6"></div>
+        <div id="msg" className="text-center text-red-500 mt-6">{msg}</div>
       </div>
+
+      <Minifooter/>
     </div>
   );
 }

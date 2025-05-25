@@ -12,12 +12,11 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
         {/* LOGO */}
         <div className="flex items-center gap-2">
-          <Image src="/logoh.png" alt="Logo" width={100} height={40} />
+          <Image src="/Evolve2.0official6.png" alt="Logo" width={150} height={60} />
         </div>
 
         {/* Desktop Links */}
         <div className="hidden md:flex gap-6 text-gray-400 font-medium">
-          <Link href="/" className="hover:text-blue-500">Home</Link>
           <Link href="/school" className="hover:text-blue-500">School</Link>
           <Link href="/university" className="hover:text-blue-500">University</Link>
           <Link href="/contact" className="hover:text-blue-500">Gallery</Link>
@@ -34,7 +33,6 @@ const Navbar = () => {
       {/* Mobile Menu */}
       {isOpen && (
         <div className="md:hidden px-4 pb-4 font-medium text-gray-700 z-100">
-          <Link href="/" className="block py-2" onClick={() => setIsOpen(false)}>Home</Link>
           <Link href="/school" className="block py-2" onClick={() => setIsOpen(false)}>School</Link>
           <Link href="/university" className="block py-2" onClick={() => setIsOpen(false)}>University</Link>
           <Link href="/contact" className="block py-2" onClick={() => setIsOpen(false)}>Gallery</Link>

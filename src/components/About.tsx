@@ -74,7 +74,7 @@ function About() {
       >
         <div ref={imageRef}>
           <Image
-            src='/roboimg.png'
+            src='/twobg.png'
             alt='Logo'
             width={300}
             height={300}

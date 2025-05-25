@@ -4,6 +4,9 @@ import Navbar from '@/components/Navbar';
 import { gsap } from 'gsap';
 import { db } from '@/firebase'; // Make sure firebase.js is configured properly
 import { collection, addDoc } from 'firebase/firestore';
+import PriceUC from '@/components/PriceUC';
+import Footer from '@/components/Footer';
+import Minifooter from '@/components/Minifooter';
 
 function Page() {
   const [msg, setMsg] = useState('');
@@ -43,10 +46,19 @@ function Page() {
     <div className="w-full flex flex-col items-center bg-[#080111] min-h-screen">
       <Navbar />
       <div className="flex flex-col items-center mt-8 p-4 text-center page-title">
-        <h1 className="text-2xl md:text-4xl font-bold text-white/50">Welcome to the University Page</h1>
-        <p className="mt-4 text-sm md:text-base text-white/50">
-          This is a placeholder for university-related content.
+        <h1 className="text-2xl md:text-4xl font-bold text-white/50">Welcome to the University Registration</h1>
+                <p className="mt-4 text-sm md:text-base text-gray-300">
+          <a
+            href="/Booklet_UC.pdf"
+            download
+            className="inline-block px-6 py-2 rounded-lg bg-white/10 backdrop-blur-md border border-white/20 text-white font-semibold shadow-lg hover:bg-white/20 transition-all duration-200 glassmorphism"
+          >
+            Download Proposal
+          </a>
         </p>
+      </div>
+      <div>
+        <PriceUC/>
       </div>
 
       <div className="w-full max-w-6xl mt-10 p-6 bg-white/5 rounded-lg shadow-md form-section">
@@ -88,6 +100,7 @@ function Page() {
           <button type="submit" className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700">Submit</button>
         </form>
       </div>
+      <Minifooter/>
     </div>
   );
 }
