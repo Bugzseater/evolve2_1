@@ -66,7 +66,7 @@ function About() {
         ref={headingRef}
         className=' text-white/80 text-[30px] md:text-[40px] ml-4 md:ml-10 text-center md:text-left'
       >
-        ABOUT EVOLVE 24
+        ABOUT EVOLVE 2.0
       </h1>
       <div
         ref={contentRef}
@@ -86,21 +86,10 @@ function About() {
           className='w-full md:w-[60%] flex p-4 md:p-5 border ml-0 md:ml-10 text-sm md:text-base'
         >
           <p className='text-white/50 text-justify'>
-            The undergraduates of the Bachelor of Science in Physics and
-            Electronics degree program in collaboration with the Electronics
-            Students Society, Faculty of Science of University of Kelaniya, is
-            organizing EVOLVE 24, a project aimed at introducing participants to
-            the essence of research, problem-solving, and prototype development.
-            The primary objective of this project is to foster a culture of
-            innovation and problem solving among students at both school and
-            university levels. This competition comprises of a school category
-            called Evolve 24 Jr. The main aim of the school category is to
-            provide a platform for school students to show their talents.
-            Awareness sessions are held for both categories, which are led by
-            industry experts, to refine their skills and add that extra sparkle
-            to their projects helping them take a step towards becoming a
-            professional or even an expert in the industry. The Evolve 24 is all
-            about presenting opportunities to all talented students.
+            Last year marked the successful completion of Evolve 1.0, which included a hackathon competition and awareness sessions conducted at both school and university levels. Building upon that foundation, this year Evolve 2.0 will feature a range of exciting activities as previously showcased.Organized by the undergraduates of the Bachelor of Science in Physics and Electronics degree program at the Faculty of Science, University of Kelaniya, "EVOLVE 2.0" is a project designed to immerse participants in the core aspects of research, problem-solving, and prototype development.
+            The key goal of this initiative is to nurture a culture of innovation and critical thinking among students from both schools and universities. As part of the hackathon, a school level category named "Evolve 2.0 Jr." has been introduced. This category aims to give school students a platform to showcase their talents and will be conducted in two phases.<br/><br/>
+            All participants, regardless of category, will have the opportunity to attend an awareness session led by industry professionals. These sessions are intended to enhance the students abilities and provide valuable guidance to elevate their projects, giving them a stepping stone toward becoming professionals or even experts in their fields.
+            Evolve 2.0 is committed to offering opportunities for all capable students. Therefore, a focused awareness program is being conducted to help students sharpen their skills and better support their innovative projects.
           </p>
         </div>
       </div>

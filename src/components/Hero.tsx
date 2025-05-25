@@ -48,7 +48,7 @@ function Hero() {
       </div>
 
       <div ref={imageRef} className='w-full md:w-[50%] flex justify-center'>
-        <Image src="/bg.png" alt="Logo" width={300} height={300} className='md:w-auto md:h-auto' />
+        <Image src="/new.png" alt="Logo" width={300} height={300} className='md:w-auto md:h-auto' />
       </div>
     </div>
   )
