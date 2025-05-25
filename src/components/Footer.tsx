@@ -1,13 +1,14 @@
 'use client';
 import React from 'react';
 import Link  from 'next/link';
+import Image from 'next/image'
 
 function Footer() {
   return (
     <footer className="flex flex-col md:flex-row justify-between items-center p-4 bg-[#010511] text-white">
       {/* Left Section: Logo */}
       <div className="mb-4 md:mb-0">
-        <img src="/Evolve2.0official6.png" alt="Logo" className="h-10" />
+            <Image src="/Evolve2.0official6.png" alt="Logo" width={150} height={60} />
       </div>
 
       {/* Middle Section: Social Media Links */}

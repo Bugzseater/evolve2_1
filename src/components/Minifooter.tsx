@@ -1,14 +1,14 @@
 'use client';
 import React from 'react';
-import Link  from 'next/link';
+import Image from 'next/image'
 
 function Minifooter() {
   return (
     <footer className="flex flex-col md:flex-row justify-between items-center gap-10 p-4 bg-[#010511] text-white">
       {/* Left Section: Logo */}
-      <div className="mb-4 md:mb-0">
-        <img src="/Evolve2.0official6.png" alt="Logo" className="h-10" />
-      </div>
+    <div className="mb-4 md:mb-0">
+      <Image src="/Evolve2.0official6.png" alt="Logo" width={150} height={60} />
+    </div>
 
       {/* Middle Section: Social Media Links */}
       <div className="flex gap-4 mb-4 md:mb-0">
